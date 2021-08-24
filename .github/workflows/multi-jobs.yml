@@ -22,7 +22,7 @@ jobs:
       output2: ${{ steps.step2.outputs.test }}
     steps:
       - id: step1
-        run: sleep ${{ github.event.input.sleep1 }} && echo "::set-output name=test::hello"
+        run: sleep ${{ github.event.inputs.sleep1 }} && echo "::set-output name=test::hello"
       - id: step2
         run: echo "::set-output name=test::world"
   job2:
@@ -32,7 +32,7 @@ jobs:
       output2: ${{ steps.step2.outputs.test }}
     steps:
       - id: step1
-        run: sleep ${{ github.event.input.sleep2 }} && echo "::set-output name=test::bonjour"
+        run: sleep ${{ github.event.inputs.sleep2 }} && echo "::set-output name=test::bonjour"
       - id: step2
         run: echo "::set-output name=test::fromjob2"
   job3:
